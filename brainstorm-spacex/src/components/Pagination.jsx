@@ -3,6 +3,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CustomBtn from '../components/Common/CustomBtn'
 import { handleIncrementPage } from '../redux/appRedux/action'
+import { useSearchParams } from 'react-router-dom'
 const Pagination = () => {
     const dispatch = useDispatch()
     const { currentPage ,totalProd} = useSelector(state => {

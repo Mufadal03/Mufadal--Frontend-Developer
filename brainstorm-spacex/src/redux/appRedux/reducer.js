@@ -4,7 +4,8 @@ const appState = {
     isLoading: false,
     isError: false,
     currentPage: 1,
-    totalProd:0
+    totalProd: 0,
+    query : {}
 }
 
 export const appReducer = (state = appState, { type, payload }) => {
@@ -34,6 +35,12 @@ export const appReducer = (state = appState, { type, payload }) => {
             return {
                 ...state,
                 currentPage : state.currentPage + payload
+            }
+        }
+        case action.FILTER_CAPSULE: {
+            return {
+                ...state,
+                query:{...payload}
             }
         }
         default: return state

@@ -29,8 +29,8 @@ const CapsuleCard = ({ capsule_id, capsule_serial, details, landings, missions, 
                         <Text>Missions :</Text>
                             <Flex direction="column" align={'flex-start'} >
                                             {
-                                missions.map((elem)=>{
-                                return <Text>{elem.flights }{elem.name} </Text>
+                                missions.map((elem,i)=>{
+                                return <Text key={i}>{elem.flights }{elem.name} </Text>
                                 })
                             }
                             </Flex>
