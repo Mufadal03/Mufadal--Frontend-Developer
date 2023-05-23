@@ -7,20 +7,20 @@ import Pagination from '../components/Pagination'
 
 const Capsules = () => {
     const dispatch = useDispatch()
-    const { data, isLoading, isError,currentPage } = useSelector((state) => {
+    const { data, isLoading, isError,currentPage ,query} = useSelector((state) => {
         return {
         data: state.appReducer.data,
         isLoading: state.appReducer.isLoading,
         isError: state.appReducer.isError,
-        currentPage:state.appReducer.currentPage
+          currentPage: state.appReducer.currentPage,
+        query :state.appReducer.query
        }
     })
-    useEffect(() => {
-      dispatch(getCapsule())
-    },[currentPage])
-    console.log(data)
+  useEffect(() => {
+      dispatch(getCapsule(query))
+    },[currentPage,query])
   return (
-    <Box minH='100vh' border={'2px solid blue'} bgColor={'#fefffe'}>
+    <Box minH='100vh'  bgColor={'#fefffe'}>
       <Heading my='1rem' fontFamily={'Ubuntu'}>Capsules</Heading>
       <Grid w='90vw' m={'auto'} h='90vh'gridTemplateRows={'repeat(auto)'} gridTemplateColumns={'repeat(2,1fr)'} gap='1rem'>
         {
