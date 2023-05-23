@@ -7,10 +7,7 @@ const Navbar = () => {
       <Flex w='90vw' m='0 auto' h='8vh' alignItems={'center'} justifyContent={'space-between'} p='.5rem'>
           <Image src={Logo} alt='LOGO' h='50px' aspectRatio={'10/3'} />
           <Flex w='40%' alignItems={'center'} gap='2rem'  justifyContent={'flex-end'} fontFamily={'Ubuntu'}>
-              <Link href='' >
-                  <Text fontSize={'lg'}>Capsules</Text>
-              </Link>
-              <Link href='' >
+              <Link href='/login' >
                   <CustomBtn text={"Login"} bg='black' color={'white'} size={"lg"} />
               </Link>
           </Flex>
